@@ -7,11 +7,57 @@ Shared platform backend and frontend for Playbit products — a modular monorepo
 ```
 bitreactor/
 ├── backend/    → Go/Gin/GORM API          (bit-reactor-be)
+│   └── internal/
+│       ├── auth/        → JWT, login, register, 2FA/TOTP
+│       ├── rbac/        → Roles, permissions, permission matrix
+│       ├── twofa/       → TOTP setup, verify, challenge flow
+│       ├── org/         → Organizations & memberships
+│       ├── project/     → Projects & permission checker
+│       ├── apikey/      → API key management (br_ prefix)
+│       ├── filestore/   → File uploads (local + S3 per-org)
+│       ├── activity/    → Polymorphic activity feed
+│       ├── tag/         → Color-coded tags
+│       ├── team/        → Teams & team assignments
+│       ├── group/       → Membership groups
+│       ├── audit/       → Immutable audit logs
+│       ├── dashboard/   → Real stats endpoint
+│       ├── settings/    → Env vars, service connections, storage
+│       └── ...
 ├── frontend/   → React/Vite/TanStack UI   (bit-reactor-fe)
+│   └── src/
+│       ├── routes/      → TanStack Router manual routes
+│       ├── components/  → shadcn/ui components
+│       ├── store/       → Zustand auth state
+│       └── lib/         → API client, hashids, utils
 └── ...
 ```
 
 Both submodules live in their own GitHub repos and are linked here for unified development.
+
+## Features
+
+| Category | Feature | Status |
+|----------|---------|--------|
+| **Auth** | JWT access + refresh tokens, bcrypt, token rotation | ✅ |
+| **Auth** | 2FA/TOTP with QR code setup and challenge login | ✅ |
+| **Users** | Profile editing, admin CRUD, password changes | ✅ |
+| **Orgs** | Multi-tenant organizations with invite flow | ✅ |
+| **Projects** | Scoped projects with role hierarchy | ✅ |
+| **RBAC** | Custom roles & permissions, permission matrix UI | ✅ |
+| **API Keys** | `br_` prefix, SHA-256 hashing, project scoping | ✅ |
+| **Files** | Upload, type classification, image dimensions, rename, public URLs | ✅ |
+| **Storage** | Local disk + S3 per-org via service connections | ✅ |
+| **Activity** | Polymorphic audit trail across all entities | ✅ |
+| **Audit Logs** | Immutable INSERT-only compliance trail | ✅ |
+| **Tags** | Color-coded tags with filtering | ✅ |
+| **Teams** | Team assignments and management | ✅ |
+| **Groups** | Membership group assignments | ✅ |
+| **Settings** | Env vars, service connections, storage engines | ✅ |
+| **Dashboard** | Real stats, activity feed, quick access | ✅ |
+| | Tasks & milestones | 🔜 |
+| | Webhooks & event system | 🔜 |
+| | Cross-product SDK (Go + TypeScript) | 🔜 |
+| | Docker/CI deployment | 🔜 |
 
 ## Prerequisites
 

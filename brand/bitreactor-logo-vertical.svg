@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none">
+  <defs>
+    <linearGradient id="coreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.5"/>
+    </linearGradient>
+    <linearGradient id="nodeBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="nodePurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="nodeIndigo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A5F"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer orbital ring -->
+  <circle cx="80" cy="55" r="36" stroke="url(#ringGrad)" stroke-width="1" stroke-dasharray="4 6" opacity="0.35"/>
+
+  <!-- Orbital arcs -->
+  <path d="M 50,39 A 34,34 0 0,1 110,39" stroke="url(#nodeBlue)" stroke-width="1" opacity="0.2" fill="none"/>
+  <path d="M 110,71 A 34,34 0 0,1 50,71" stroke="url(#nodePurple)" stroke-width="1" opacity="0.2" fill="none"/>
+
+  <!-- Hexagonal frame -->
+  <polygon
+    points="80,32 101,43.5 101,66.5 80,78 59,66.5 59,43.5"
+    stroke="url(#coreGrad)"
+    stroke-width="2.5"
+    fill="none"
+    stroke-linejoin="round"
+    opacity="0.85"
+  />
+
+  <!-- Reactive energy lines -->
+  <line x1="80" y1="32" x2="80" y2="44" stroke="url(#nodeBlue)" stroke-width="1.5" opacity="0.6"/>
+  <line x1="101" y1="66.5" x2="91.5" y2="62" stroke="url(#nodePurple)" stroke-width="1.5" opacity="0.6"/>
+  <line x1="59" y1="66.5" x2="68.5" y2="62" stroke="url(#nodePurple)" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Core diamond -->
+  <polygon points="80,41 90,55 80,69 70,55" fill="url(#coreGrad)"/>
+
+  <!-- Core center glow -->
+  <circle cx="80" cy="55" r="3" fill="white" opacity="0.5"/>
+
+  <!-- Nodes -->
+  <circle cx="80" cy="26" r="4" fill="url(#nodeBlue)"/>
+  <circle cx="80" cy="26" r="6" fill="url(#nodeBlue)" opacity="0.15"/>
+
+  <circle cx="106" cy="70" r="4" fill="url(#nodePurple)"/>
+  <circle cx="106" cy="70" r="6" fill="url(#nodePurple)" opacity="0.15"/>
+
+  <circle cx="54" cy="70" r="4" fill="url(#nodeIndigo)"/>
+  <circle cx="54" cy="70" r="6" fill="url(#nodeIndigo)" opacity="0.15"/>
+
+  <!-- Typography -->
+  <g transform="translate(80, 100)">
+    <!-- Bit -->
+    <text
+      x="-38" y="0"
+      font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif"
+      font-size="38"
+      font-weight="700"
+      letter-spacing="-1"
+      fill="#1E3A5F"
+      text-anchor="middle"
+      dominant-baseline="central"
+    >Bit</text>
+
+    <!-- Reactor -->
+    <text
+      x="42" y="0"
+      font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif"
+      font-size="38"
+      font-weight="300"
+      letter-spacing="-0.5"
+      fill="#7C3AED"
+      text-anchor="middle"
+      dominant-baseline="central"
+    >Reactor</text>
+
+    <!-- Tagline -->
+    <text
+      x="0" y="28"
+      font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif"
+      font-size="11"
+      font-weight="400"
+      letter-spacing="3"
+      fill="#94A3B8"
+      text-anchor="middle"
+      dominant-baseline="central"
+    >INFRASTRUCTURE PLATFORM</text>
+  </g>
+</svg>
